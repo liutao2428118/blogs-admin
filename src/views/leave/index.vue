@@ -15,7 +15,7 @@
                 <template slot-scope="scope">
                     <el-link
                         type="primary"
-                        :href="'http://127.0.0.1:3000/about/' + form.page + '#' + scope.row._id"
+                        :href="'/about/' + form.page + '#' + scope.row._id"
                         target="_blank"
                     >回复</el-link>
                     <el-button type="text" @click="handleDelete(scope.row._id)">删除</el-button>

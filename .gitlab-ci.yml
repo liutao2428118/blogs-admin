@@ -1,0 +1,19 @@
+# 使用docker镜像
+
+ stages:
+    - build
+    - test
+    - deploy
+
+# ----------------构建-----------------
+ build:
+    stage: build
+    script:
+     - echo "Hello, Shell"
+     - whoami
+     - pwd
+     - cp -avpf /dist/* /docker/nginx/www/dist/
+    only:
+     - tags
+    tags:
+     - pro-runner 

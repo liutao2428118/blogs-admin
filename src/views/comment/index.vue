@@ -28,7 +28,7 @@
             <el-table-column prop="content" label="评论内容"></el-table-column>
             <el-table-column prop="address" label="操作">
                 <template slot-scope="scope">
-                    <el-link type="primary" :href="'http://127.0.0.1:3000/article/' + (scope.row.articleId && scope.row.articleId._id) + '#' + scope.row._id" target="_blank">回复</el-link>
+                    <el-link type="primary" :href="'/article/' + (scope.row.articleId && scope.row.articleId._id) + '#' + scope.row._id" target="_blank">回复</el-link>
                     <el-button type="text" @click="handleDelete(scope.row._id)">删除</el-button>
                 </template>
             </el-table-column>

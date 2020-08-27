@@ -1,6 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getSession, setSession, removeSession } from '@/utils/auth'
 import { resetRouter } from '@/router'
+import Cookies from 'js-cookie'
 
 const getDefaultState = () => {
     return {
@@ -31,6 +32,7 @@ const actions = {
             login({ username: username.trim(), password: password }).then(response => {
                 const { data } = response
                 commit('SET_NAME', data.username)
+                Cookies.set('user', JSON.stringify(data))
                 resolve()
             }).catch(error => {
                 reject(error)
