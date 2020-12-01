@@ -47,7 +47,7 @@
                         :key="reply._id"
                         class="item"
                         type="info"
-                        :href="'http://127.0.0.1:3000/article/' + reply.articleId._id + '#' +reply._id"
+                        :href="'/article/' + reply.articleId._id + '#' +reply._id"
                         target="_blank"
                     >{{`${reply.from.username}在`}}{{reply.createdAt | time}}{{`评论了你的文章-${reply.articleId.title}`}}</el-link>
                 </el-card>
